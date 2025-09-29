@@ -3,6 +3,7 @@ import 'package:tickts/base/widgets/app_double_text.dart';
 import 'package:tickts/base/widgets/my_text_faild.dart';
 import 'package:tickts/base/res/media.dart';
 import 'package:tickts/base/res/styles/app_styles.dart';
+import 'package:tickts/base/widgets/tickt_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -41,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 12),
-                // ✅ ثبّت أبعاد اللوغو
+
                 SizedBox(
                   width: 50,
                   height: 50,
@@ -56,6 +57,7 @@ class HomeScreen extends StatelessWidget {
             MyTextFaild(),
             SizedBox(height: 40),
             AppDoubleTtxt(bigText: 'UpComming Flights', smallText: 'View all'),
+            TicktView(),
           ],
         ),
       ),
