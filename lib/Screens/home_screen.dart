@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 5),
                       Text(
-                        "Boo ticket",
+                        "Book ticket",
                         style: AppStyles.headLineStyle1,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
@@ -57,6 +57,7 @@ class HomeScreen extends StatelessWidget {
             MyTextFaild(),
             SizedBox(height: 40),
             AppDoubleTtxt(bigText: 'UpComming Flights', smallText: 'View all'),
+            SizedBox(height: 20),
             TicktView(),
           ],
         ),
