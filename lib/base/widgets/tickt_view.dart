@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tickts/base/res/styles/app_styles.dart';
+import 'package:tickts/base/widgets/app_coulmn_text_layout.dart';
 import 'package:tickts/base/widgets/app_layout_bulder_widget.dart';
 import 'package:tickts/base/widgets/big_circle.dart';
 import 'package:tickts/base/widgets/big_dot.dart';
+import 'package:tickts/base/widgets/text_style_fourth.dart';
+import 'package:tickts/base/widgets/text_style_thired.dart';
 
 class TicktView extends StatelessWidget {
   const TicktView({super.key});
@@ -17,6 +20,7 @@ class TicktView extends StatelessWidget {
         margin: EdgeInsets.only(right: 16),
         child: Column(
           children: [
+            //blue part of the ticket
             Container(
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -31,12 +35,7 @@ class TicktView extends StatelessWidget {
                   //show the departure and destination with icons first line
                   Row(
                     children: [
-                      Text(
-                        "NYC",
-                        style: AppStyles.headLineStyle3.copyWith(
-                          color: Colors.white,
-                        ),
-                      ),
+                      TextStyleThired(text: "NYC"),
                       Expanded(child: Container()),
                       BigDot(),
                       Expanded(
@@ -60,36 +59,25 @@ class TicktView extends StatelessWidget {
                       ),
                       BigDot(),
                       Expanded(child: Container()),
-                      Text(
-                        "LDN",
-                        style: AppStyles.headLineStyle3.copyWith(
-                          color: Colors.white,
-                        ),
-                      ),
+                      TextStyleThired(text: "LDN"),
                     ],
                   ),
                   //show the departure and destination name with time secound line
                   SizedBox(height: 3),
                   Row(
                     children: [
-                      Text(
-                        "New-York",
-                        style: AppStyles.headLineStyle3.copyWith(
-                          color: Colors.white,
-                        ),
+                      SizedBox(
+                        width: 100,
+                        child: TextStyleFourth(text: "New-York"),
                       ),
                       Expanded(child: Container()),
-                      Text(
-                        "8H 30M",
-                        style: AppStyles.headLineStyle3.copyWith(
-                          color: Colors.white,
-                        ),
-                      ),
+                      TextStyleFourth(text: "8H 30M"),
                       Expanded(child: Container()),
-                      Text(
-                        "London",
-                        style: AppStyles.headLineStyle3.copyWith(
-                          color: Colors.white,
+                      SizedBox(
+                        width: 100,
+                        child: TextStyleFourth(
+                          text: "London",
+                          align: TextAlign.end,
                         ),
                       ),
                     ],
@@ -97,6 +85,7 @@ class TicktView extends StatelessWidget {
                 ],
               ),
             ),
+            //tow circles and the dash line
             Container(
               color: AppStyles.ticketColor2,
               child: Row(
@@ -110,6 +99,7 @@ class TicktView extends StatelessWidget {
                 ],
               ),
             ),
+            // orange part of the ticket
             Container(
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -123,56 +113,22 @@ class TicktView extends StatelessWidget {
                 children: [
                   //show the departure and destination with icons first line
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        "1 MAY",
-                        style: AppStyles.headLineStyle3.copyWith(
-                          color: Colors.white,
-                        ),
+                      AppCoulmnTextLayout(
+                        lineOneText: '1 MAY',
+                        lineTowTEXT: 'date',
+                        theTextALign: CrossAxisAlignment.start,
                       ),
-                      Expanded(child: Container()),
-
-                      Expanded(
-                        child: Text(
-                          "08:00 AM",
-                          style: AppStyles.headLineStyle3.copyWith(
-                            color: Colors.white,
-                          ),
-                        ),
+                      AppCoulmnTextLayout(
+                        lineOneText: '08:00 AM',
+                        lineTowTEXT: 'Departrue time',
+                        theTextALign: CrossAxisAlignment.center,
                       ),
-
-                      Expanded(child: Container()),
-                      Text(
-                        "23",
-                        style: AppStyles.headLineStyle3.copyWith(
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                  //show the departure and destination name with time secound line
-                  SizedBox(height: 3),
-                  Row(
-                    children: [
-                      Text(
-                        "date",
-                        style: AppStyles.headLineStyle3.copyWith(
-                          color: Colors.white,
-                        ),
-                      ),
-                      Expanded(child: Container()),
-                      Text(
-                        "Departure Time",
-                        style: AppStyles.headLineStyle3.copyWith(
-                          color: Colors.white,
-                        ),
-                      ),
-                      Expanded(child: Container()),
-                      Text(
-                        "Number",
-                        style: AppStyles.headLineStyle3.copyWith(
-                          color: Colors.white,
-                        ),
+                      AppCoulmnTextLayout(
+                        lineOneText: '23',
+                        lineTowTEXT: 'Number',
+                        theTextALign: CrossAxisAlignment.end,
                       ),
                     ],
                   ),
