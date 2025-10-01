@@ -18,6 +18,7 @@ class HomeScreen extends StatelessWidget {
         child: ListView(
           children: [
             SizedBox(height: 40),
+            // the header ( good morning and book ticket and the logo)
             Row(
               children: [
                 Expanded(
@@ -57,8 +58,10 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 16),
             MyTextFaild(),
             SizedBox(height: 40),
-            AppDoubleTtxt(bigText: 'UpComming Flights', smallText: 'View all'),
+           // The horizontal 2 texts "upcomming flights" and "View all"
+            AppDoubleTtxt(bigText: 'UpComming Flights', smallText: 'View all',funcNavigator: ()=> Navigator.pushNamed(context, "AllTickets"),),
             SizedBox(height: 20),
+            // The Tickets maping
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -68,6 +71,9 @@ class HomeScreen extends StatelessWidget {
                     .toList(),
               ),
             ),
+          SizedBox(height: 20),
+            // The horizontal 2 texts "Hotels" and "View all"
+            AppDoubleTtxt(bigText: 'Hotels', smallText: 'View all',funcNavigator: ()=> Navigator.pushNamed(context, "Hotels"),),
           ],
         ),
       ),

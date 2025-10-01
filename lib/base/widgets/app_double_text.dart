@@ -4,9 +4,11 @@ import 'package:tickts/base/res/styles/app_styles.dart';
 
 // ignore: must_be_immutable
 class AppDoubleTtxt extends StatelessWidget {
-  AppDoubleTtxt({super.key, required this.bigText, required this.smallText});
-  String bigText;
-  String smallText;
+  const AppDoubleTtxt({super.key, required this.bigText, required this.smallText,required this.funcNavigator});
+  final String bigText;
+  final String smallText;
+  final VoidCallback funcNavigator;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -14,14 +16,7 @@ class AppDoubleTtxt extends StatelessWidget {
       children: [
         Text(bigText, style: AppStyles.headLineStyle2),
         InkWell(
-          onTap: () {
-            Navigator.push<void>(
-              context,
-              MaterialPageRoute<void>(
-                builder: (BuildContext context) => const AllTickets(),
-              ),
-            );
-          },
+          onTap: funcNavigator,
           child: Text(
             smallText,
             style: AppStyles.defultTextStyle.copyWith(
