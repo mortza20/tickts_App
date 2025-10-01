@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tickts/base/Utils/all_json.dart';
 import 'package:tickts/base/widgets/app_double_text.dart';
 import 'package:tickts/base/widgets/my_text_faild.dart';
 import 'package:tickts/base/res/media.dart';
@@ -58,7 +59,14 @@ class HomeScreen extends StatelessWidget {
             SizedBox(height: 40),
             AppDoubleTtxt(bigText: 'UpComming Flights', smallText: 'View all'),
             SizedBox(height: 20),
-            TicktView(),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: ticketList
+                    .map((singleTicket) => TicktView(ticket: singleTicket))
+                    .toList(),
+              ),
+            ),
           ],
         ),
       ),

@@ -8,7 +8,8 @@ import 'package:tickts/base/widgets/text_style_fourth.dart';
 import 'package:tickts/base/widgets/text_style_thired.dart';
 
 class TicktView extends StatelessWidget {
-  const TicktView({super.key});
+  final Map<String, dynamic> ticket;
+  const TicktView({super.key, required this.ticket});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class TicktView extends StatelessWidget {
                   //show the departure and destination with icons first line
                   Row(
                     children: [
-                      TextStyleThired(text: "NYC"),
+                      TextStyleThired(text: ticket["from"]["code"]),
                       Expanded(child: Container()),
                       BigDot(),
                       Expanded(
@@ -59,7 +60,7 @@ class TicktView extends StatelessWidget {
                       ),
                       BigDot(),
                       Expanded(child: Container()),
-                      TextStyleThired(text: "LDN"),
+                      TextStyleThired(text: ticket["to"]["code"]),
                     ],
                   ),
                   //show the departure and destination name with time secound line
@@ -68,15 +69,15 @@ class TicktView extends StatelessWidget {
                     children: [
                       SizedBox(
                         width: 100,
-                        child: TextStyleFourth(text: "New-York"),
+                        child: TextStyleFourth(text: ticket["from"]['name']),
                       ),
                       Expanded(child: Container()),
-                      TextStyleFourth(text: "8H 30M"),
+                      TextStyleFourth(text: ticket["flying_time"]),
                       Expanded(child: Container()),
                       SizedBox(
                         width: 100,
                         child: TextStyleFourth(
-                          text: "London",
+                          text: ticket["to"]["name"],
                           align: TextAlign.end,
                         ),
                       ),
@@ -116,17 +117,17 @@ class TicktView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AppCoulmnTextLayout(
-                        lineOneText: '1 MAY',
+                        lineOneText: ticket["date"],
                         lineTowTEXT: 'date',
                         theTextALign: CrossAxisAlignment.start,
                       ),
                       AppCoulmnTextLayout(
-                        lineOneText: '08:00 AM',
+                        lineOneText: ticket['departure_time'],
                         lineTowTEXT: 'Departrue time',
                         theTextALign: CrossAxisAlignment.center,
                       ),
                       AppCoulmnTextLayout(
-                        lineOneText: '23',
+                        lineOneText: ticket["number"].toString(),
                         lineTowTEXT: 'Number',
                         theTextALign: CrossAxisAlignment.end,
                       ),
