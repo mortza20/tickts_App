@@ -31,4 +31,12 @@ List<Map<String, dynamic>> ticketList = [
     'departure_time': "07:00 AM",
     "number": 13,
   },
+  {
+    'from': {'code': "Japan", 'name': "JP"},
+    'to': {'code': "QA", 'name': "Qatar"},
+    'flying_time': '7H 20M',
+    'date': "1 SPT",
+    'departure_time': "07:00 AM",
+    "number": 13,
+  },
 ];
