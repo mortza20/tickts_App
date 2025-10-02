@@ -9,6 +9,7 @@ class AppStyles {
   static Color ticketColor2 = const Color(0xfff37b67);
   static Color hotelCard = const Color(0xffd2bdb6);
   static Color findTicktColor = const Color(0xD91130ce);
+  static Color circleColor = const Color(0xff189999);
 
   static TextStyle defultTextStyle = TextStyle(
     fontSize: 16,

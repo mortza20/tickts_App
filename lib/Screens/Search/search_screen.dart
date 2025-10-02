@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tickts/Screens/Search/Widgets/app_icon.dart';
 import 'package:tickts/Screens/Search/Widgets/app_ticket_tabs.dart';
 import 'package:tickts/Screens/Search/Widgets/find_ticket.dart';
+import 'package:tickts/Screens/Search/Widgets/trubleCard.dart';
 import 'package:tickts/base/res/styles/app_styles.dart';
 import 'package:tickts/base/widgets/app_double_text.dart';
 
@@ -34,6 +35,8 @@ class SearchScreen extends StatelessWidget {
             smallText: 'View all',
             funcNavigator: () => Navigator.pushNamed(context, "AllTickets"),
           ),
+          SizedBox(height: 20),
+          Trublecard(),
         ],
       ),
     );
