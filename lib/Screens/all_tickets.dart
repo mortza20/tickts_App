@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tickts/base/Utils/all_json.dart';
-import 'package:tickts/base/widgets/tickt_view.dart';
+import 'package:tickts/Screens/Home/widgets/tickt_view.dart';
 
 class AllTickets extends StatelessWidget {
   const AllTickets({super.key});

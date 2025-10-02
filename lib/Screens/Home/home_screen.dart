@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tickts/Screens/Home/widgets/hotel_card.dart';
 import 'package:tickts/base/Utils/all_json.dart';
 import 'package:tickts/base/widgets/app_double_text.dart';
 import 'package:tickts/base/widgets/my_text_faild.dart';
 import 'package:tickts/base/res/media.dart';
 import 'package:tickts/base/res/styles/app_styles.dart';
-import 'package:tickts/base/widgets/tickt_view.dart';
+import 'package:tickts/Screens/Home/widgets/tickt_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -58,8 +59,12 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 16),
             MyTextFaild(),
             SizedBox(height: 40),
-           // The horizontal 2 texts "upcomming flights" and "View all"
-            AppDoubleTtxt(bigText: 'UpComming Flights', smallText: 'View all',funcNavigator: ()=> Navigator.pushNamed(context, "AllTickets"),),
+            // The horizontal 2 texts "upcomming flights" and "View all"
+            AppDoubleTtxt(
+              bigText: 'UpComming Flights',
+              smallText: 'View all',
+              funcNavigator: () => Navigator.pushNamed(context, "AllTickets"),
+            ),
             SizedBox(height: 20),
             // The Tickets maping
             SingleChildScrollView(
@@ -71,9 +76,29 @@ class HomeScreen extends StatelessWidget {
                     .toList(),
               ),
             ),
-          SizedBox(height: 20),
+            SizedBox(height: 20),
             // The horizontal 2 texts "Hotels" and "View all"
-            AppDoubleTtxt(bigText: 'Hotels', smallText: 'View all',funcNavigator: ()=> Navigator.pushNamed(context, "Hotels"),),
+            AppDoubleTtxt(
+              bigText: 'Hotels',
+              smallText: 'View all',
+              funcNavigator: () => Navigator.pushNamed(context, "Hotels"),
+            ),
+            SizedBox(height: 10),
+            //the hotel cards
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: hotelList
+                    .take(2)
+                    .map(
+                      (singleHotel) => Container(
+                        margin: EdgeInsets.only(right: 16),
+                        child: HotelCard(hotel: singleHotel),
+                      ),
+                    )
+                    .toList(),
+              ),
+            ),
           ],
         ),
       ),
